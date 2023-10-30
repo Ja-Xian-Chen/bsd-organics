@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAmazon, faShopify } from "@fortawesome/free-brands-svg-icons";
 
-export const Features = (props) => {
+export const Features = () => {
   return (
     <div id="features" className="text-center">
       <div className="container">

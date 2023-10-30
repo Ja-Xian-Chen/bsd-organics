@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Navigation = (props) => {
+export const Navigation = () => {
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
@@ -12,9 +12,9 @@ export const Navigation = (props) => {
             data-target="#bs-example-navbar-collapse-1"
           >
             <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
           </button>
           <a className="navbar-brand page-scroll" href="#page-top">
             Bsd Organics 

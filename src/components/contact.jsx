@@ -1,12 +1,13 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
+
 const initialState = {
   name: "",
   email: "",
   message: "",
 };
-export const Contact = (props) => {
+export const Contact = () => {
   const [{ name, email, message }, setState] = useState(initialState);
 
   const handleChange = (e) => {
@@ -112,15 +113,15 @@ export const Contact = (props) => {
                 <span>
                   <i className="fa fa-phone"></i> Phone
                 </span>
-                {props.data ? props.data.phone : "loading"}
+                +1 571-685-3348
               </p>
             </div>
             <div className="contact-item">
               <p>
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
-                </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                </span>
+                Bsdorganicsacs@gmail.com
               </p>
             </div>
           </div>
