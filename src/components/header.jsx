@@ -9,12 +9,12 @@ export const Header = (props) => {
             <div className="row">
               <div className="col-md-8 col-md-offset-2 intro-text">
                 <h1>
-                  "Bsd Organics"
+                  Bsd Organics
                   <span></span>
                 </h1>
                 <p>
-                  "Located in the US and India with over 6 years of ecommerce
-                  services."
+                  Located in the US and India with over 6 years of ecommerce
+                  services.
                 </p>
                 <a
                   href="#features"
