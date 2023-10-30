@@ -12,13 +12,16 @@ export const Header = (props) => {
                   "Bsd Organics"
                   <span></span>
                 </h1>
-                <p>{props.data ? props.data.paragraph : "Loading"}</p>
+                <p>
+                  "Located in the US and India with over 6 years of ecommerce
+                  services."
+                </p>
                 <a
                   href="#features"
                   className="btn btn-custom btn-lg page-scroll"
                 >
                   About Us
-                </a>{" "}
+                </a>
               </div>
             </div>
           </div>
