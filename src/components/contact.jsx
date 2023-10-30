@@ -1,13 +1,11 @@
 import { useState } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
-
 const initialState = {
   name: "",
   email: "",
   message: "",
 };
-
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
 
@@ -15,7 +13,18 @@ export const Contact = (props) => {
     const { name, value } = e.target;
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
-  const clearState = () => setState({ ...initialState });
+
+  const clearState = () => {
+    setState(initialState);
+  };
+
+  const [showPopup, setShowPopup] = useState(false);
+  const showSuccessPopup = () => {
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 3000); 
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,12 +40,14 @@ export const Contact = (props) => {
         (result) => {
           console.log(result.text);
           clearState();
+          showSuccessPopup();
         },
         (error) => {
           console.log(error.text);
         }
       );
   };
+
   return (
     <div>
       <div id="contact">
@@ -50,7 +61,7 @@ export const Contact = (props) => {
                   get back to you as soon as possible.
                 </p>
               </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
+              <form name="sentMessage" onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -58,20 +69,6 @@ export const Contact = (props) => {
                         type="text"
                         id="name"
                         name="name"
-                        className="form-control"
-                        placeholder="Name"
-                        required
-                        onChange={handleChange}
-                      />
-                      <p className="help-block text-danger"></p>
-                    </div>
-                  </div>
-                  <div className="col-md-6">
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
                         className="form-control"
                         placeholder="Email"
                         required
@@ -94,6 +91,12 @@ export const Contact = (props) => {
                   <p className="help-block text-danger"></p>
                 </div>
                 <div id="success"></div>
+                <div
+                  className="message-popup"
+                  style={{ display: showPopup ? "block" : "none" }}
+                >
+                  Message sent successfully!
+                </div>
                 <button type="submit" className="btn btn-custom btn-lg">
                   Send Message
                 </button>
@@ -108,7 +111,7 @@ export const Contact = (props) => {
               <p>
                 <span>
                   <i className="fa fa-phone"></i> Phone
-                </span>{" "}
+                </span>
                 {props.data ? props.data.phone : "loading"}
               </p>
             </div>
@@ -119,10 +122,6 @@ export const Contact = (props) => {
                 </span>{" "}
                 {props.data ? props.data.email : "loading"}
               </p>
-            </div>
-          </div>
-          <div className="col-md-12">
-            <div className="row">
             </div>
           </div>
         </div>

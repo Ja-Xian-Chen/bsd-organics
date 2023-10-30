@@ -17,7 +17,6 @@ export const Features = (props) => {
               </div>
               <h3>Amazon</h3>
               <p>
-                {" "}
                 Amazon services cover product listing and optimization,
                 fulfillment, advertising campaigns, inventory management,
                 competitor analysis, customer service, and sales analysis, all
