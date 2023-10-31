@@ -7,6 +7,7 @@ const initialState = {
   email: "",
   message: "",
 };
+
 export const Contact = () => {
   const [{ name, email, message }, setState] = useState(initialState);
 
